@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Smart Student Performance Prediction</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- Student Name Popup -->
+<div id="namePopup" style="
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+">
+  <div style="
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    width: 320px;
+  ">
+    <h3 style="color:#0f766e;">Enter Student Name</h3>
+    <input
+      id="studentNameInput"
+      type="text"
+      placeholder="Student Name"
+      style="width:100%; padding:12px; margin:15px 0; border-radius:10px;"
+    />
+    <button id="saveNameBtn"
+      style="
+        background: linear-gradient(135deg, #14b8a6, #0f766e);
+        color:#fff;
+        padding:10px 30px;
+        border:none;
+        border-radius:25px;
+        font-weight:600;
+        cursor:pointer;
+      ">
+      Continue
+    </button>
+  </div>
+</div>
+
+<div class="container">
+  <h1>Smart Student Performance Prediction</h1>
+  <h2>Analyze Academic Performance Intelligently</h2>
+
+  <p class="description">
+    Enter student details below to predict academic performance
+    using attendance, internal assessment, and assignment scores.
+  </p>
+
+  <div class="inputs">
+    <div class="box">
+      <h3>Attendance (%)</h3>
+      <input type="number" id="attendance" />
+    </div>
+
+    <div class="box">
+      <h3>Internal Marks</h3>
+      <input type="number" id="internal" />
+    </div>
+
+    <div class="box">
+      <h3>Assignment Score</h3>
+      <input type="number" id="assignment" />
+    </div>
+  </div>
+
+  <div class="btn-container">
+    <button id="predictBtn">Start Prediction</button>
+  </div>
+
+  <div class="btn-container" style="margin-top:20px;">
+  <button id="downloadPdfBtn">Download PDF Report</button>
+</div>
+
+
+  <p id="result"></p>
+  <canvas id="myChart" style="margin-top:30px;"></canvas>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
